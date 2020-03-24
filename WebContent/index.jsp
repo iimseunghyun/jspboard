@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title><%= request.getAttribute("Home")%></title>
 </head>
 <body>
-
+.index page.
 </body>
 </html>
