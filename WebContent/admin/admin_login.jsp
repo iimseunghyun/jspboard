@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home!</title>
+<title><%= request.getAttribute("admin_login")%></title>
 </head>
 <body>
-안녕하세요! 야호!
+
 </body>
 </html>
