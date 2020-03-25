@@ -7,6 +7,19 @@
 <title>Home!</title>
 </head>
 <body>
-안녕하세요! 야호!
+<form action="BlogServlet" method = "post">
+<%
+	String id = (String) session.getAttribute("ID");
+	if(id == null){
+		out.print("안녕하세요 ! 야호 !" + "<br>");
+		out.print("<input type='submit' name = 'cmd' value = '회원가입' />");
+		out.print("<input type='submit' name = 'cmd' value = '로그인' />");
+	}else{
+		out.print(id + "님 환영합니다!" + "<br>");
+		out.print("<input type = 'submit' name = 'cmd' value = '로그아웃' />");
+	}
+
+%>
+</form>
 </body>
 </html>
