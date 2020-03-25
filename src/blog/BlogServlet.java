@@ -30,16 +30,15 @@ public class BlogServlet extends HttpServlet {
 			view = "index.jsp";
 		}else if(cmd.equals("회원가입")) {
 			view = "user_register.jsp";
-		}else if(cmd.equals("로그인")) {       //null.equals("str") : 예외발생
+		}else if(cmd.equals("로그인")) {
 			view = "login_form.jsp";
 		}else if(cmd.equals("로그아웃")) {
 			view = "logout.jsp";
-//		}else if(cmd.equals("login")) {
-//				view = "member_login.jsp";
-//				cmd = "login"; 
-//				request.setAttribute(cmd, "로그인되었습니다.");
+		}else if(cmd.equals("admin_login")) {
+			view = "admin_login.jsp";
+		}else if(cmd.equals("post관리")) {
+			view = "admin_postlist.jsp";
 		}
-//		request.setAttribute(cmd,cmd);
 		RequestDispatcher dis = request.getRequestDispatcher(view);
 		dis.forward(request, response);
 	}
