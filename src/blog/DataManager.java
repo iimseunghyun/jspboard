@@ -47,9 +47,69 @@ public class DataManager {
 		}
 		return res;
 	}
+// 로그인
+	public boolean isUser(String id, String pass) {
+		PreparedStatement pstmt =null;
+		String query = "SELECT * FROM `user` WHERE user_id=? and password=?";
+		boolean res = false;
+		openConnection();
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pass);
+			ResultSet rs = pstmt.executeQuery();
+			res = rs.next();
+			rs.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+		return res;
+	}
+
+	//관리자 로그인
+	public boolean isSuperuser(String id, String pass) {
+		PreparedStatement pstmt =null;
+		String query = "SELECT * FROM `superuser` WHERE superuser_id=? and password=?";
+		boolean res = false;
+		openConnection();
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pass);
+			ResultSet rs = pstmt.executeQuery();
+			res = rs.next();
+			rs.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+		return res;
+	}
+	
 // 회원탈퇴
+    public int removeUser(String id) {
+        PreparedStatement pstmt = null;
+        String query = "DELETE FROM `user` WHERE id=?";
+        int res = 0;
+        openConnection();
+        try {
+            pstmt = con.prepareCall(query);
+            pstmt.setString(1, id);
+            res = pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection();
+        }
+        return res;
+    }
+	
 // 회원 정보수정
-// 가입 확인
+	
+	
 // 회원정보 확인
 //
 }
