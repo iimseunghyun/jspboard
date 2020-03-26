@@ -17,8 +17,8 @@
 	}else if(id.equals("admin")){
         response.sendRedirect("admin_main.jsp");
 	}else{
-		out.print(id + "님 환영합니다!" + "<br>");
-		out.print("<input type = 'submit' name = 'cmd' value = '로그아웃' />");
+        response.sendRedirect("login_mainTest.jsp");
+
 	}
 %>
 <button onclick = "location='BlogServlet'" name = "cmd" value = "admin_login">관리자로그인</button>
