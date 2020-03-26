@@ -38,13 +38,18 @@ public class BlogServlet extends HttpServlet {
 			view = "admin_login.jsp";
 		}else if(cmd.equals("post관리")) {
 			view = "admin_postlist.jsp";
+		}else if(cmd.equals("회원탈퇴")) {
+			view = "user_delete.jsp";
+		}else if(cmd.equals("수정")) {
+			view = "user_update.jsp";
+		}else if(cmd.equals("나의정보")) {
+			view = "user_info.jsp";
+		}else if(cmd.equals("변경하기")) {
+			view = "updater.jsp";
 		}
 		RequestDispatcher dis = request.getRequestDispatcher(view);
 		dis.forward(request, response);
 	}
-	
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

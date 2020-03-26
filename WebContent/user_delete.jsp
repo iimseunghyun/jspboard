@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page session="true"%>
+<%
+    request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,12 +11,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <jsp:useBean id="data" class="blog.DataManager" scope="page" />
-<form action="">
+    <jsp:useBean id="database" class="blog.DataManager" scope="page" />
+<form action="BlogServlet">
     <%
         String id = (String) session.getAttribute("ID");
         if (id != null) {
-            if (data.removeUser(id) != 0) {
+            if (database.removeUser(id) != 0) {
                 out.print("회원정보 삭제 성공");
                 session.invalidate();
                 out.print("<input type='submit' value = 'Home' name = 'cmd' />");

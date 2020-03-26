@@ -17,7 +17,7 @@
         String pass = request.getParameter("pass");
         if (database.isUser(id, pass)) {
             session.setAttribute("ID", id);
-            response.sendRedirect("post_list.jsp");
+            response.sendRedirect("login_mainTest.jsp");
         } else {
             response.sendRedirect("index.jsp");
         }

@@ -92,11 +92,11 @@ public class DataManager {
 // 회원탈퇴
     public int removeUser(String id) {
         PreparedStatement pstmt = null;
-        String query = "DELETE FROM `user` WHERE id=?";
+        String query = "DELETE FROM `user` WHERE user_id=?";
         int res = 0;
         openConnection();
         try {
-            pstmt = con.prepareCall(query);
+            pstmt = con.prepareStatement(query);
             pstmt.setString(1, id);
             res = pstmt.executeUpdate();
         } catch (Exception e) {
@@ -108,8 +108,46 @@ public class DataManager {
     }
 	
 // 회원 정보수정
+    public int updateUser(UserInfo user) {
+        PreparedStatement pstmt = null;
+        String query = "UPDATE `user` SET password=?, username=? WHERE user_id=?";
+        int res = 0;
+        openConnection();
+        try {
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, user.getPass());
+            pstmt.setString(2, user.getName());
+            res = pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection();
+        }
+        return res;
+    }
+
 	
-	
-// 회원정보 확인
+// 회원정보 가져오기
+    public UserInfo getUser(String id) {
+    	PreparedStatement pstmt = null;
+    	UserInfo user = new UserInfo();
+    	String query = "SELECT * FROM `user` WHERE user_id=?";
+    	openConnection();
+    	try {
+    		pstmt = con.prepareStatement(query);
+    		pstmt.setString(1,id);
+    		ResultSet rs = pstmt.executeQuery();
+    		rs.next();
+    		user.setId(rs.getString("user_id"));
+    		user.setPass(rs.getString("password"));
+    		user.setName(rs.getString("username"));
+    		rs.close();
+    	}catch (Exception e) {
+    		e.printStackTrace();
+    	}finally {
+    		closeConnection();
+    	}
+    	return user;
+    }
 //
 }
