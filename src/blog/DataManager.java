@@ -117,6 +117,7 @@ public class DataManager {
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, user.getPass());
             pstmt.setString(2, user.getName());
+            pstmt.setString(3, user.getId());
             res = pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

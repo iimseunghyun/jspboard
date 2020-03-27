@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page session="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -10,14 +11,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:useBean id = "database" class = "blog.DataManager" scope = "page" />
+	<jsp:useBean id="database" class="blog.DataManager" scope="page" />
 	<form action="updater.jsp" method = "post">
-	<%
+		<%
 		String id = (String) session.getAttribute("ID");
 	    if (id != null) {
 	        UserInfo user = database.getUser(id);
 	        out.print("<table>");
 	        out.print("<tr><th colspan=2>회원정보</th></tr>");
+            out.print("<tr><td>아이디</td><td>" + user.getId()+ "</td></tr>");
 	        out.print("<tr><td>비밀번호</td><td><input type=\"password\" name=\"pass\" value=\"" + user.getPass()
 	                + "\"></td></tr>");
 	        out.print("<tr><td>이름</td><td><input type=\"text\" name=\"name\" value=\"" + user.getName()
@@ -27,7 +29,7 @@
 	    } else {
 	        response.sendRedirect("index.jsp");
 	    }
-	%>
+		%>
 	</form>
 <form action="BlogServlet" method = "post">
 <input type="submit" name = "cmd" value = "로그아웃" />

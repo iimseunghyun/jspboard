@@ -19,7 +19,6 @@
 	        out.print("<table>");
 	        out.print("<tr><th colspan=2>회원정보</th></tr>");
 	        out.print("<tr><td>아이디</td><td>" + user.getId()+ "</td></tr>");
-	        out.print("<tr><td>비밀번호</td><td>" + user.getPass()+"</td></tr>");
 	        out.print("<tr><td>이름</td><td>" + user.getName()+ "</td></tr>");
 	        out.print("<tr><td solspan=2><input type=\"submit\" name = \"cmd\" value=\"수정\"></td></tr>");
 	        out.print("</table>");
