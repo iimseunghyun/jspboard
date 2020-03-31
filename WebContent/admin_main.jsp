@@ -8,6 +8,11 @@
 </head>
 <body>
 hello admin
+<%
+	String id = (String) session.getAttribute("ID");
+if (id == null) response.sendRedirect("login_form.jsp");
+
+%>
 <form action="BlogServlet" method = "post">
 <button onclick = "location='BlogServlet'" name = "cmd" value = "post관리" >postlist관리</button>
 <button onclick = "location='BlogServlet'" name = "cmd" value = "로그아웃" >logout</button>

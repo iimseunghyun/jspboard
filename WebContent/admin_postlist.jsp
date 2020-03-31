@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	String id = (String) session.getAttribute("ID");
+if (id == null) response.sendRedirect("login_form.jsp");
+
+%>
 hello admin, postlist
 </body>
 </html>

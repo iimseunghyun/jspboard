@@ -14,12 +14,13 @@
 로그인 되었습니다.
 <%
 	String id = (String) session.getAttribute("ID");
+if (id == null) response.sendRedirect("login_form.jsp");
+
 %>
 <form action="BlogServlet" method = "post">
 <button name = "cmd" value = "로그아웃" >로그아웃</button>
 <button name = "cmd" value = "탈퇴" >회원탈퇴</button>
 <input type="submit" name = "cmd" value = "나의정보" />
-
 </form>
 
 </body>
