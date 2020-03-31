@@ -27,15 +27,15 @@ public class BlogServlet extends HttpServlet {
 		String view = null;
 				
 		if(cmd == null || cmd.equals("Home")) {
-			view = "index.jsp";
+			view = "login_form.jsp";
 		}else if(cmd.equals("회원가입")) {
-			view = "user_register.jsp";
+			view = "login_form.jsp";
 		}else if(cmd.equals("로그인")) {
 			view = "login_form.jsp";
 		}else if(cmd.equals("로그아웃")) {
 			view = "logout.jsp";
 		}else if(cmd.equals("admin_login")) {
-			view = "admin_login.jsp";
+			view = "login_form.jsp";
 		}else if(cmd.equals("post관리")) {
 			view = "admin_postlist.jsp";
 		}else if(cmd.equals("회원탈퇴")) {

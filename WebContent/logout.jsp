@@ -14,6 +14,6 @@
         }
     %>
 로그아웃 되었습니다.
-<button onclick = "location='index.jsp'" name = "cmd" value = "Home" >Home으로</button>
+<button onclick = "location='login_form.jsp'" name = "cmd" value = "Home" >Home으로</button>
 </body>
 </html>

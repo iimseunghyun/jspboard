@@ -23,7 +23,7 @@
 	        out.print("<tr><td solspan=2><input type=\"submit\" name = \"cmd\" value=\"수정\"></td></tr>");
 	        out.print("</table>");
 	    } else {
-	        response.sendRedirect(rPath+"/index.jsp");
+	        response.sendRedirect(rPath+"/login_form.jsp");
 	    }
 %>
 <input type="submit" name = "cmd" value = "로그아웃" />

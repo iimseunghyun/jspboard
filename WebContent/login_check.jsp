@@ -19,7 +19,7 @@
             session.setAttribute("ID", id);
             response.sendRedirect("login_mainTest.jsp");
         } else {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("login_form.jsp");
         }
     %>
 </body>

@@ -27,7 +27,7 @@
 	        out.print("<tr><td solspan=2><input type=\"submit\" value=\"변경하기\"></td></tr>");
 	        out.print("</table>");
 	    } else {
-	        response.sendRedirect("index.jsp");
+	        response.sendRedirect("login_form.jsp");
 	    }
 		%>
 	</form>

@@ -25,7 +25,7 @@
                 out.print("<input type='submit' value = 'Home' name = 'cmd' />");
             }
         } else {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("login_form.jsp");
         }
     %>
 </form>

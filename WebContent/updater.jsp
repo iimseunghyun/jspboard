@@ -24,7 +24,7 @@
                 out.print("회원정보 수정에 실패하였습니다.");            
             }
         } else {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("login_form.jsp");
         }
     %>
 <button name = "cmd" value ="나의정보">회원정보 보기</button>
