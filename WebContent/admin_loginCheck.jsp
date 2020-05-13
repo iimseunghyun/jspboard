@@ -20,7 +20,7 @@
             session.setAttribute("ID", id);
             response.sendRedirect(rPath+"/admin_main.jsp");
         } else {
-            response.sendRedirect(rPath);
+            response.sendRedirect("login_form.jsp");
         }
     %>
     
