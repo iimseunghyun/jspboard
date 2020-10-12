@@ -6,7 +6,7 @@ public class DataManager {
 	Connection con = null;
 	String url = "jdbc:mariadb://localhost:3306/blog";
 	String dbuser = "root";
-	String dbpass = "gustmddla426";
+	String dbpass = "***";
 	
 	private Connection openConnection() {
 		try {
